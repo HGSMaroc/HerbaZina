@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HerbaZina – Cosmétiques Naturels du Maroc</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tajawal:wght@300;400;500;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #f5efe6;
+    --cream: #faf6f0;
+    --green: #2d5a27;
+    --green-light: #4a7c3f;
+    --green-pale: #e8f0e6;
+    --terracotta: #c4603a;
+    --gold: #b5860d;
+    --dark: #1a1a18;
+    --text: #3a3830;
+    --text-light: #7a7060;
+    --border: #ddd4c0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,246,240,0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--terracotta);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--green); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .cart-btn {
+    background: var(--green);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+
+  .cart-btn:hover { background: var(--green-light); }
+
+  .cart-count {
+    background: var(--terracotta);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #2d5a27 0%, #1a3a16 50%, #2d5a27 100%);
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 80px 80px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+  }
+
+  .hero-orb-1 {
+    width: 500px; height: 500px;
+    background: #7ab870;
+    top: -100px; right: -50px;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .hero-orb-2 {
+    width: 300px; height: 300px;
+    background: var(--terracotta);
+    bottom: -80px; left: 200px;
+    animation: float 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 580px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #a8d8a8;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    margin-bottom: 28px;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 300;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: #a8d8a8;
+  }
+
+  .hero-title-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 28px;
+    direction: rtl;
+    text-align: left;
+  }
+
+  .hero-desc {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--terracotta);
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: #a84e2e;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(196,96,58,0.4);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: white;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+  }
+
+  .hero-features {
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 2;
+  }
+
+  .hero-feature {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 20px 24px;
+    max-width: 220px;
+    backdrop-filter: blur(10px);
+    animation: slideIn 0.6s ease backwards;
+  }
+
+  .hero-feature:nth-child(2) { animation-delay: 0.2s; }
+  .hero-feature:nth-child(3) { animation-delay: 0.4s; }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .feature-icon { font-size: 28px; margin-bottom: 8px; }
+  .feature-title { color: white; font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+  .feature-desc { color: rgba(255,255,255,0.55); font-size: 12px; line-height: 1.4; }
+
+  /* DELIVERY BANNER */
+  .delivery-banner {
+    background: var(--green-pale);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  /* SECTION STYLES */
+  section { padding: 80px 80px; }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    background: var(--green-pale);
+    color: var(--green);
+    padding: 4px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 400;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+
+  .section-title em { font-style: italic; color: var(--green); }
+
+  .section-sub {
+    color: var(--text-light);
+    margin-top: 12px;
+    font-size: 15px;
+    direction: rtl;
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  /* PRODUCTS */
+  .products-bg { background: var(--sand); }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 28px;
+  }
+
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  }
+
+  .product-img-wrap {
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+    background: var(--sand);
+  }
+
+  .product-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .product-card:hover .product-img-wrap img {
+    transform: scale(1.05);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--green);
+    color: white;
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  .product-body {
+    padding: 20px 22px 24px;
+  }
+
+  .product-brand {
+    font-size: 11px;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .product-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .product-name-ar {
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    color: var(--text-light);
+    direction: rtl;
+    margin-bottom: 10px;
+  }
+
+  .product-desc {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  .product-price span {
+    font-size: 14px;
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 400;
+    color: var(--text-light);
+    margin-left: 4px;
+  }
+
+  .add-to-cart {
+    background: var(--green);
+    color: white;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .add-to-cart:hover {
+    background: var(--terracotta);
+    transform: scale(1.1);
+  }
+
+  /* CATEGORIES */
+  .categories {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .cat-btn {
+    padding: 8px 22px;
+    border-radius: 50px;
+    border: 1.5px solid var(--border);
+    background: white;
+    color: var(--text);
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .cat-btn.active, .cat-btn:hover {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+  }
+
+  /* WHY US */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .why-card {
+    text-align: center;
+    padding: 36px 24px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: white;
+    transition: all 0.3s;
+  }
+
+  .why-card:hover {
+    border-color: var(--green);
+    box-shadow: 0 8px 32px rgba(45,90,39,0.1);
+    transform: translateY(-4px);
+  }
+
+  .why-icon {
+    font-size: 42px;
+    margin-bottom: 16px;
+  }
+
+  .why-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark);
+  }
+
+  .why-desc {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+
+  /* CART SIDEBAR */
+  .cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(4px);
+  }
+
+  .cart-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -440px;
+    width: 440px;
+    height: 100vh;
+    background: white;
+    z-index: 201;
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+  }
+
+  .cart-sidebar.open { right: 0; }
+
+  .cart-header {
+    padding: 28px 28px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cart-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .close-cart {
+    background: var(--sand);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .close-cart:hover { background: var(--border); }
+
+  .cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 28px;
+  }
+
+  .cart-item {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .cart-item-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: var(--sand);
+    flex-shrink: 0;
+  }
+
+  .cart-item-info { flex: 1; }
+
+  .cart-item-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .cart-item-price {
+    color: var(--green);
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  .cart-item-qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .qty-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .qty-btn:hover {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+  }
+
+  .qty-num { font-weight: 600; font-size: 14px; min-width: 20px; text-align: center; }
+
+  .remove-item {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    transition: color 0.2s;
+  }
+
+  .remove-item:hover { color: var(--terracotta); }
+
+  .cart-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-light);
+  }
+
+  .cart-empty-icon { font-size: 64px; margin-bottom: 16px; opacity: 0.3; }
+  .cart-empty p { font-size: 16px; }
+
+  .cart-footer {
+    padding: 20px 28px 28px;
+    border-top: 1px solid var(--border);
+  }
+
+  .cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .cart-total-label {
+    font-size: 16px;
+    color: var(--text-light);
+  }
+
+  .cart-total-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--green);
+  }
+
+  .cart-delivery-note {
+    background: var(--green-pale);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--green);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .whatsapp-btn {
+    width: 100%;
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+  }
+
+  .whatsapp-btn:hover {
+    background: #1da851;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+  }
+
+  /* FORM MODAL */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(6px);
+    padding: 20px;
+  }
+
+  .modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .modal {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform 0.3s;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+  }
+
+  .modal-overlay.open .modal { transform: scale(1); }
+
+  .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .modal-sub {
+    color: var(--text-light);
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .form-group { margin-bottom: 18px; }
+
+  .form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 15px;
+    color: var(--dark);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-input:focus { border-color: var(--green); }
+
+  .order-summary {
+    background: var(--sand);
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 24px;
+  }
+
+  .order-summary-title {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 6px;
+  }
+
+  .summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--dark);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+
+  .submit-btn {
+    width: 100%;
+    background: #25d366;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+    margin-top: 8px;
+  }
+
+  .submit-btn:hover {
+    background: #1da851;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--sand);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.7);
+    padding: 60px 80px 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 14px;
+  }
+
+  .footer-logo span { color: #7ab870; }
+
+  .footer-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 280px;
+  }
+
+  .footer-col-title {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: #7ab870; }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+
+  .footer-wa {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #25d366;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--green);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 500;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav, section, footer { padding-left: 24px; padding-right: 24px; }
+    .hero { padding: 60px 24px; flex-direction: column; min-height: auto; }
+    .hero-features { position: static; transform: none; flex-direction: row; flex-wrap: wrap; margin-top: 40px; }
+    .hero-feature { max-width: 180px; }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .cart-sidebar { width: 100%; right: -100%; }
+    .products-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Herba<span>Zina</span></a>
+  <ul class="nav-links">
+    <li><a href="#produits">Produits</a></li>
+    <li><a href="#pourquoi">Pourquoi nous</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="cart-btn" onclick="toggleCart()">
+      🛒 Panier
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- DELIVERY BANNER -->
+<div class="delivery-banner">
+  🚚 Livraison gratuite à domicile · التوصيل مجاني إلى باب المنزل · الدفع عند الاستلام
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🌿 Produit du Maroc · 100% Naturel</div>
+    <h1 class="hero-title">La nature<br><em>marocaine</em><br>pour votre beauté</h1>
+    <p class="hero-title-ar">جمال طبيعي من أرض المغرب</p>
+    <p class="hero-desc">Huiles végétales, argiles, miels et plantes sèches — sélectionnés avec soin pour prendre soin de votre peau et votre bien-être.</p>
+    <div class="hero-btns">
+      <a href="#produits" class="btn-primary">Découvrir les produits</a>
+      <a href="#pourquoi" class="btn-outline">En savoir plus</a>
+    </div>
+  </div>
+  <div class="hero-features">
+    <div class="hero-feature">
+      <div class="feature-icon">💳</div>
+      <div class="feature-title">Paiement à la livraison</div>
+      <div class="feature-desc">Payez cash à la réception de votre commande</div>
+    </div>
+    <div class="hero-feature">
+      <div class="feature-icon">🚚</div>
+      <div class="feature-title">Livraison gratuite</div>
+      <div class="feature-desc">Partout au Maroc, sans frais</div>
+    </div>
+    <div class="hero-feature">
+      <div class="feature-icon">🌱</div>
+      <div class="feature-title">100% Naturel</div>
+      <div class="feature-desc">Ingrédients purs, sans additifs chimiques</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-bg" id="produits">
+  <div class="section-header">
+    <div class="section-tag">Nos Produits</div>
+    <h2 class="section-title">Une sélection <em>naturelle</em></h2>
+    <p class="section-sub">منتجات طبيعية 100% من المغرب</p>
+  </div>
+  <div class="categories">
+    <button class="cat-btn active" onclick="filterProducts('all', this)">Tous</button>
+    <button class="cat-btn" onclick="filterProducts('huiles', this)">Huiles végétales</button>
+    <button class="cat-btn" onclick="filterProducts('beaute', this)">Beauté & Soin</button>
+    <button class="cat-btn" onclick="filterProducts('plantes', this)">Plantes & Tisanes</button>
+    <button class="cat-btn" onclick="filterProducts('miel', this)">Miels</button>
+  </div>
+  <div class="products-grid" id="productsGrid"></div>
+</section>
+
+<!-- WHY US -->
+<section id="pourquoi">
+  <div class="section-header">
+    <div class="section-tag">Pourquoi HerbaZina</div>
+    <h2 class="section-title">Notre <em>engagement</em></h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">🌿</div>
+      <div class="why-title">100% Naturel</div>
+      <div class="why-desc">Tous nos produits sont 100% naturels, sans conservateurs ni produits chimiques.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🏔️</div>
+      <div class="why-title">Origine Maroc</div>
+      <div class="why-desc">Sourcing direct auprès de coopératives et producteurs marocains certifiés.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">🚚</div>
+      <div class="why-title">Livraison gratuite</div>
+      <div class="why-desc">Livraison à domicile gratuite partout au Maroc. Paiement à la réception.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">💬</div>
+      <div class="why-title">Commande WhatsApp</div>
+      <div class="why-desc">Confirmation rapide et personnalisée via WhatsApp. Réponse en moins d'une heure.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Herba<span>Zina</span></div>
+      <p class="footer-desc">Cosmétiques naturels et produits du terroir marocain. Pureté, authenticité et bien-être.<br><br>مستحضرات طبيعية من أرض المغرب.</p>
+      <div class="footer-wa" style="margin-top:20px;">
+        <span>📱</span> 0628 282 127
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#produits">Nos produits</a></li>
+        <li><a href="#pourquoi">Pourquoi nous</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Informations</div>
+      <ul class="footer-links">
+        <li><a href="#">Livraison & Retours</a></li>
+        <li><a href="#">Paiement à la livraison</a></li>
+        <li><a href="#">Produits naturels</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 HerbaZina. Tous droits réservés.</span>
+    <span>Made with 🌿 au Maroc</span>
+  </div>
+</footer>
+
+<!-- CART SIDEBAR -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <div class="cart-title">Mon Panier 🛒</div>
+    <button class="close-cart" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-amount" id="cartTotal">0 MAD</span>
+    </div>
+    <div class="cart-delivery-note">🚚 Livraison gratuite · الدفع عند الاستلام</div>
+    <button class="whatsapp-btn" onclick="openOrderModal()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Commander via WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- ORDER FORM MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" style="position:relative;">
+    <button class="close-modal" onclick="closeOrderModal()">✕</button>
+    <div class="modal-title">Confirmer la commande</div>
+    <p class="modal-sub">تأكيد الطلب · Remplissez vos coordonnées</p>
+    <div class="order-summary" id="modalSummary"></div>
+    <div class="form-group">
+      <label class="form-label">Nom complet / الاسم الكامل *</label>
+      <input class="form-input" type="text" id="fName" placeholder="Votre nom et prénom">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Téléphone / رقم الهاتف *</label>
+      <input class="form-input" type="tel" id="fPhone" placeholder="06XXXXXXXX">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Ville / المدينة *</label>
+      <input class="form-input" type="text" id="fCity" placeholder="Ex: Casablanca, Rabat...">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Adresse / العنوان *</label>
+      <input class="form-input" type="text" id="fAddress" placeholder="Votre adresse complète">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Note (optionnel)</label>
+      <input class="form-input" type="text" id="fNote" placeholder="Instructions de livraison...">
+    </div>
+    <button class="submit-btn" onclick="sendWhatsApp()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Confirmer & Envoyer sur WhatsApp
+    </button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+const PRODUCTS = [
+  {
+    id: 1, cat: 'beaute',
+    brand: 'HerbaZina',
+    name: 'Tebrima Royale',
+    nameAr: 'التبريعة الملكية',
+    desc: 'Mélange traditionnel marocain +20 ingrédients. Exfoliant corps au savon beldi.',
+    price: 45,
+    badge: 'Bestseller',
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23e8e0d0" width="400" height="300"/><rect x="120" y="40" width="160" height="200" rx="80" fill="%23c8b89a" opacity="0.6"/><circle cx="200" cy="140" r="60" fill="%23a08060" opacity="0.4"/><text x="200" y="148" font-family="serif" font-size="16" fill="%23604030" text-anchor="middle">100g</text></svg>'
+  },
+  {
+    id: 2, cat: 'huiles',
+    brand: 'HerbaZina',
+    name: 'Huile de Coco Extra Vierge',
+    nameAr: 'زيت جوز الهند البكر الممتاز',
+    desc: "Pressée à froid. Multi-usages : corps, visage, cheveux. 160g.",
+    price: 70,
+    badge: 'Naturel',
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23f0ece4" width="400" height="300"/><rect x="130" y="50" width="140" height="180" rx="20" fill="%23d4c8b0" opacity="0.7"/><ellipse cx="200" cy="50" rx="70" ry="14" fill="%23c8b89a"/><text x="200" y="148" font-family="serif" font-size="14" fill="%23604030" text-anchor="middle">160g</text></svg>'
+  },
+  {
+    id: 3, cat: 'huiles',
+    brand: 'HerbaZina',
+    name: "Huile d'Amande Douce",
+    nameAr: 'زيت اللوز الحلو',
+    desc: 'Premier pression à froid. Naturelle & vierge. 50ml.',
+    price: 50,
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23f5f0e8" width="400" height="300"/><rect x="170" y="30" width="60" height="200" rx="30" fill="%23e8dcc8" opacity="0.8"/><ellipse cx="200" cy="30" rx="30" ry="10" fill="%23d4c4a0"/><text x="200" y="240" font-family="sans-serif" font-size="13" fill="%23806040" text-anchor="middle">50ml</text></svg>'
+  },
+  {
+    id: 4, cat: 'huiles',
+    brand: 'HerbaZina',
+    name: 'Huile de Chanvre',
+    nameAr: 'زيت القنب الهندي',
+    desc: 'Huile végétale de chanvre. Premier pression à froid. 50ml.',
+    price: 59,
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23edf2e8" width="400" height="300"/><rect x="170" y="30" width="60" height="200" rx="30" fill="%23c8d8b0" opacity="0.8"/><ellipse cx="200" cy="30" rx="30" ry="10" fill="%23a8c090"/><text x="200" y="240" font-family="sans-serif" font-size="13" fill="%23406030" text-anchor="middle">50ml</text></svg>'
+  },
+  {
+    id: 5, cat: 'huiles',
+    brand: 'Tamaynoute',
+    name: "Huile de Noyaux d'Abricot",
+    nameAr: 'زيت نواة المشمش',
+    desc: "Huile végétale de noyaux d'abricot. 50ml.",
+    price: 50,
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23fdf0e0" width="400" height="300"/><rect x="170" y="30" width="60" height="200" rx="10" fill="%23f0c870" opacity="0.8"/><ellipse cx="200" cy="30" rx="30" ry="12" fill="%23d4a840"/><text x="200" y="240" font-family="sans-serif" font-size="13" fill="%23806020" text-anchor="middle">50ml</text></svg>'
+  },
+  {
+    id: 6, cat: 'plantes',
+    brand: 'Tatfi',
+    name: 'Camomille Sauvage',
+    nameAr: 'البابونج البري',
+    desc: 'Wild Chamomile. Camomille sauvage séchée. Made in Morocco. 60g.',
+    price: 35,
+    badge: 'Bio',
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23f8f0dc" width="400" height="300"/><rect x="100" y="40" width="200" height="220" rx="8" fill="%23d4c090" opacity="0.5"/><circle cx="200" cy="120" r="40" fill="%23f0d060" opacity="0.5"/><text x="200" y="200" font-family="sans-serif" font-size="13" fill="%23605020" text-anchor="middle">60g</text></svg>'
+  },
+  {
+    id: 7, cat: 'plantes',
+    brand: 'Tatfi',
+    name: 'Origan Sec',
+    nameAr: 'الزعتر المجفف',
+    desc: "Feuilles d'origan séchées. 100% naturel. 70g.",
+    price: 30,
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23f0f0e8" width="400" height="300"/><rect x="100" y="40" width="200" height="220" rx="8" fill="%23a8b890" opacity="0.5"/><text x="200" y="200" font-family="sans-serif" font-size="13" fill="%23405020" text-anchor="middle">70g</text></svg>'
+  },
+  {
+    id: 8, cat: 'plantes',
+    brand: 'Tatfi',
+    name: 'Lavande Séchée',
+    nameAr: 'الخزامة المجففة',
+    desc: 'Dried Lavender · Lavande séchée du Maroc. 80g.',
+    price: 38,
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23f0eef8" width="400" height="300"/><rect x="100" y="40" width="200" height="220" rx="8" fill="%23c8b0d8" opacity="0.5"/><text x="200" y="200" font-family="sans-serif" font-size="13" fill="%23604080" text-anchor="middle">80g</text></svg>'
+  },
+  {
+    id: 9, cat: 'miel',
+    brand: 'Chaouia Pur & Sur',
+    name: 'Miel de Eucalyptus',
+    nameAr: 'عسل الكاليبتوس',
+    desc: 'Miel pur 100% naturel. Produit marocain. Bio. 1kg.',
+    price: 120,
+    badge: 'Bio',
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23f8f0e8" width="400" height="300"/><rect x="120" y="60" width="160" height="180" rx="16" fill="%23902020" opacity="0.6"/><ellipse cx="200" cy="60" rx="80" ry="16" fill="%23a02828"/><text x="200" y="200" font-family="sans-serif" font-size="13" fill="%23ffffff" text-anchor="middle">1 kg</text></svg>'
+  },
+  {
+    id: 10, cat: 'miel',
+    brand: 'Chaouia Pur & Sur',
+    name: 'Miel de Citronnier',
+    nameAr: 'عسل الليمون',
+    desc: 'Miel pur 100% naturel. Produit marocain. Bio. 1kg.',
+    price: 110,
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23fdf5e0" width="400" height="300"/><rect x="120" y="60" width="160" height="180" rx="16" fill="%23d09020" opacity="0.6"/><ellipse cx="200" cy="60" rx="80" ry="16" fill="%23b07810"/><text x="200" y="200" font-family="sans-serif" font-size="13" fill="%23ffffff" text-anchor="middle">1 kg</text></svg>'
+  },
+  {
+    id: 11, cat: 'miel',
+    brand: 'Tatfi Naturel',
+    name: 'Miel de Cèdres',
+    nameAr: 'عسل السدر',
+    desc: 'Miel de cèdres naturel. 500g.',
+    price: 95,
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23f0ece8" width="400" height="300"/><rect x="120" y="60" width="160" height="180" rx="16" fill="%23803018" opacity="0.7"/><ellipse cx="200" cy="60" rx="80" ry="16" fill="%23902820"/><text x="200" y="200" font-family="sans-serif" font-size="13" fill="%23ffffff" text-anchor="middle">500 g</text></svg>'
+  },
+  {
+    id: 12, cat: 'beaute',
+    brand: 'HerbaZina',
+    name: 'Poudre de Nila',
+    nameAr: 'بودرة النيلة',
+    desc: 'Nila naturelle marocaine. Soin traditionnel cheveux. 50g.',
+    price: 40,
+    badge: 'Traditionnel',
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23eeeaf8" width="400" height="300"/><rect x="110" y="50" width="180" height="180" rx="12" fill="%237060a8" opacity="0.5"/><ellipse cx="200" cy="50" rx="90" ry="16" fill="%23907ec0"/><text x="200" y="200" font-family="sans-serif" font-size="13" fill="%23ffffff" text-anchor="middle">50g</text></svg>'
+  },
+  {
+    id: 13, cat: 'beaute',
+    brand: 'HerbaZina',
+    name: 'Argile Blanche Surfine',
+    nameAr: 'طين أبيض ناعم',
+    desc: 'Argile Blanche Surfine. Tous types de peau et cheveux. 200g.',
+    price: 45,
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23f8f8f8" width="400" height="300"/><rect x="110" y="50" width="180" height="180" rx="12" fill="%23e0e0e0" opacity="0.7"/><ellipse cx="200" cy="50" rx="90" ry="16" fill="%23c8c8c8"/><text x="200" y="200" font-family="sans-serif" font-size="13" fill="%23606060" text-anchor="middle">200g</text></svg>'
+  },
+  {
+    id: 14, cat: 'beaute',
+    brand: 'HerbaZina',
+    name: 'Argile Rouge Surfine',
+    nameAr: 'طين أحمر ناعم',
+    desc: 'Argile Rouge Surfine. 100% naturelle. 200g.',
+    price: 45,
+    img: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect fill="%23f8ece8" width="400" height="300"/><rect x="110" y="50" width="180" height="180" rx="12" fill="%23c06840" opacity="0.6"/><ellipse cx="200" cy="50" rx="90" ry="16" fill="%23a85030"/><text x="200" y="200" font-family="sans-serif" font-size="13" fill="%23ffffff" text-anchor="middle">200g</text></svg>'
+  },
+];
+
+let cart = [];
+let currentFilter = 'all';
+
+function renderProducts(filter = 'all') {
+  const grid = document.getElementById('productsGrid');
+  const filtered = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.cat === filter);
+  grid.innerHTML = filtered.map(p => `
+    <div class="product-card" data-cat="${p.cat}">
+      <div class="product-img-wrap">
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+        ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+      </div>
+      <div class="product-body">
+        <div class="product-brand">${p.brand}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-name-ar">${p.nameAr}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-footer">
+          <div class="product-price">${p.price}<span>MAD</span></div>
+          <button class="add-to-cart" onclick="addToCart(${p.id})" title="Ajouter au panier">+</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterProducts(cat, btn) {
+  currentFilter = cat;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(cat);
+}
+
+function addToCart(id) {
+  const product = PRODUCTS.find(p => p.id === id);
+  const existing = cart.find(i => i.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ ...product, qty: 1 });
+  }
+  updateCartUI();
+  showToast(`✅ ${product.name} ajouté au panier`);
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(i => i.id !== id);
+  updateCartUI();
+}
+
+function changeQty(id, delta) {
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) removeFromCart(id);
+  else updateCartUI();
+}
+
+function updateCartUI() {
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const count = cart.reduce((s, i) => s + i.qty, 0);
+  document.getElementById('cartCount').textContent = count;
+  document.getElementById('cartTotal').textContent = `${total} MAD`;
+
+  const itemsEl = document.getElementById('cartItems');
+  const footerEl = document.getElementById('cartFooter');
+
+  if (cart.length === 0) {
+    itemsEl.innerHTML = `
+      <div class="cart-empty">
+        <div class="cart-empty-icon">🛒</div>
+        <p>Votre panier est vide</p>
+        <p style="font-size:13px;margin-top:8px;direction:rtl;">سلة التسوق فارغة</p>
+      </div>`;
+    footerEl.style.display = 'none';
+  } else {
+    footerEl.style.display = 'block';
+    itemsEl.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <img class="cart-item-img" src="${item.img}" alt="${item.name}">
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-price">${item.price * item.qty} MAD</div>
+          <div class="cart-item-qty">
+            <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+            <span class="qty-num">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+          </div>
+        </div>
+        <button class="remove-item" onclick="removeFromCart(${item.id})">🗑</button>
+      </div>
+    `).join('');
+  }
+}
+
+function toggleCart() {
+  document.getElementById('cartSidebar').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open');
+}
+
+function openOrderModal() {
+  if (cart.length === 0) return;
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const summary = `
+    <div class="order-summary-title">📦 Récapitulatif de commande</div>
+    ${cart.map(i => `<div class="summary-item"><span>${i.name} ×${i.qty}</span><span>${i.price * i.qty} MAD</span></div>`).join('')}
+    <div class="summary-total"><span>Total</span><span>${total} MAD</span></div>
+  `;
+  document.getElementById('modalSummary').innerHTML = summary;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeOrderModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+
+function sendWhatsApp() {
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const city = document.getElementById('fCity').value.trim();
+  const address = document.getElementById('fAddress').value.trim();
+  const note = document.getElementById('fNote').value.trim();
+
+  if (!name || !phone || !city || !address) {
+    showToast('⚠️ Veuillez remplir tous les champs obligatoires', '#c4603a');
+    return;
+  }
+
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const items = cart.map(i => `• ${i.name} ×${i.qty} — ${i.price * i.qty} MAD`).join('\n');
+
+  const msg = `🌿 *Nouvelle commande HerbaZina*\n\n` +
+    `👤 *Nom:* ${name}\n` +
+    `📱 *Tél:* ${phone}\n` +
+    `🏙 *Ville:* ${city}\n` +
+    `📍 *Adresse:* ${address}\n` +
+    `${note ? `📝 *Note:* ${note}\n` : ''}\n` +
+    `*🛒 Produits commandés:*\n${items}\n\n` +
+    `💰 *Total: ${total} MAD*\n` +
+    `✅ Paiement à la livraison\n🚚 Livraison gratuite`;
+
+  const url = `https://wa.me/212628282127?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+  closeOrderModal();
+  toggleCart();
+  cart = [];
+  updateCartUI();
+  showToast('✅ Commande envoyée sur WhatsApp !');
+}
+
+function showToast(msg, bg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.style.background = bg || 'var(--green)';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// Init
+renderProducts();
+updateCartUI();
+</script>
+</body>
+</html>
